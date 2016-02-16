@@ -1,0 +1,2 @@
+$ echo -n "ZmxhZ3tIb3dUb0ZpbmRTdHJpbmdzSW5QRVlvdUtub3d9Cg==" | base64 -d -
+flag{HowToFindStringsInPEYouKnow}

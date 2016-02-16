@@ -1,0 +1,7 @@
+Identify the problem in Irfanview w/ Plugins version 4.35 using "PoC.fpx".
+
+1) Which module contains the bug?
+
+2) What is the core issue and the consequense? (e.g. NULL pointer dereference and crash OR boundary error and heap-based buffer overflow, etc)
+
+3) Is it exploitable or just a crash?

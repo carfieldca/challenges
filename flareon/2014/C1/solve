@@ -1,0 +1,5 @@
+
+with open("rev_challenge_1.dat_secret.encode", "rb") as fo:
+  c = fo.read()
+
+"".join([chr((ord(b) >> 4 | (ord(b) << 4 & 240)) ^ 41) for b in c])
