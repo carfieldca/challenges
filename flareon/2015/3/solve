@@ -1,0 +1,4 @@
+>>> c = "moc.no-eralf@OOOOY.sev0000L.eiflE"
+>>>
+>>> c[::-1]
+'Elfie.L0000ves.YOOOO@flare-on.com'
