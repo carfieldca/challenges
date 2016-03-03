@@ -1,0 +1,35 @@
+
+
+004010E4  AF AA AD EB|AE AA EC A4|BA AF AE AA|8A C0 A7 B0|
+004010F4  BC 9A BA A5|A5 BA AF B8|9D B8 F9 AE|9D AB B4 BC|
+00401104  B6 B3 90 9A|A8
+
+
+
+\xAF\xAA\xAD\xEB\xAE\xAA\xEC\xA4\xBA\xAF\xAE\xAA\x8A\xC0\xA7\xB0\xBC\x9A\xBA\xA5\xA5\xBA\xAF\xB8\x9D\xB8\xF9\xAE\x9D\xAB\xB4\xBC\xB6\xB3\x90\x9A\xA8
+
+
+mov     dx, bx                        ; bx = dx
+and     dx, 3                         ; dx &= 3
+mov     ax, 1C7h                      ; ax = 0x1c7
+push    eax                           ; 
+sahf                                  ; 
+lodsb                                 ; 
+pushf                                 ; 
+xor     al, [esp+10h+var_C]           ; al ^= *p
+xchg    cl, dl                        ; tp = cl; cl = dl; dl = tp OR cl = cl ^ dl; dl = cl ^ dl; cl = cl ^ dl
+rol     ah, cl                        ; ah = ah << cl
+popf                                  ; 
+adc     al, ah                        ; 
+xchg    cl, dl                        ; 
+xor     edx, edx                      ; 
+and     eax, 0FFh                     ; 
+add     bx, ax                        ; 
+scasb                                 ; 
+cmovnz  cx, dx                        ; 
+pop     eax                           ; 
+jecxz   short loc_4010D7              ; 
+sub     edi, 2                        ; 
+loop    loc_4010A2                    ; 
+jmp     short loc_4010D9              ; 
+
